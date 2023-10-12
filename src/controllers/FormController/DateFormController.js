@@ -6,7 +6,15 @@ const endDate = new Date(`${endDate1}T00:00:00.000Z`);
     createdAt: { $gte: startDate, $lte: endDate },
   });
 
-  return formsDate;
+  const form = formsDate.map((form,index) => {
+    total = index+1;
+  return {
+    ...form.toObject(),
+    index,
+  };
+
+});
+  return form;
 };
 
 

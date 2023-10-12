@@ -17,9 +17,16 @@ const HourFormController = async (hora) => {
     hour: { $gte: `${horaRestada}:00`, $lte: `${hora}:00` },
   });
 
+  const form = formsDate.map((form,index) => {
+    total = index+1;
+  return {
+    ...form.toObject(),
+    index,
+  };
 
+});
 
-  return formsDate;
+  return form;
 };
 
 
