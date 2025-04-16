@@ -79,6 +79,7 @@ require("dotenv").config();
 const FormController = async (name,lastname,email,file) =>{
 
 const archivo = file.image
+console.log(archivo)  
   const url_img = await loadPhoto(archivo)
 
   try {
